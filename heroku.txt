@@ -1,0 +1,50 @@
+Useful Articles
+---------------
+https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction
+https://devcenter.heroku.com/articles/mongolab
+https://devcenter.heroku.com/articles/mean-apps-restful-api
+
+Commands Used:
+--------------
+> heroku create
+> heroku create --remote qa
+> git push heroku master
+> heroku ps:scale web=1
+> heroku open
+> heroku apps:rename newname
+> heroku addons:create mongolab
+
+Managing multiple environments:
+-------------------------------
+https://devcenter.heroku.com/articles/multiple-environments
+
+To add a new environment:
+> heroku create --remote qa
+
+After adding qa environment, renaming that qa app
+> heroku apps:rename newName --app oldName
+> heroku apps:rename todos-api-qa --app pacific-woodland-89082
+
+To push the changes to qa
+> git push qa master
+
+To install addon to specific environment
+> heroku addons:create mongolab --remote dev
+OR
+> heroku addons:create mongolab --app todos-api-dev
+
+To remove a remote for that repo
+> git remote rm qa - will remove the qa remote.
+> git remote rm heroku - will remove the default remote heroku.
+
+git commands:
+-------------
+> git remote - Display list of remotes
+
+> git push heroku master - Push to heroku git repo, local master branch to remote master branch
+
+> git push heroku testbranch:master - Push to heroku git repo, local testbranch to remote master branch
+
+> heroku git:remote -a todos-api-production - To configure existing heroku app to a local git repo. 
+
+> git remote rm qa - To remove a remote for that repo.
